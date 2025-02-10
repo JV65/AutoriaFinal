@@ -1,130 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastre-se</title>
-    <link rel="stylesheet" href="Cadastro.css">
+    <title>Cadastro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {    
+          background-image: url(./imagens/Frente.jpeg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .login-container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 4 6 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+    </style>
 </head>
 
- <!--Corpo de toda a página  -->
+
 <body>
-    
-  <!-- Bloco verde ao lado esquerdo, contém a logo do if  -->   
-<div class="cad">
 
-    
-      <!-- div dsa logo do if   -->   
-    <div class="cabeçalho">
-    
-        <img src="logo1-removebg-preview.png" alt="">
-
-    </div>
-
-
-</div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+        <img src="./imagens/logo1-removebg-preview.png" alt="" style="margin-top: 130px;">
+      </div>
 
 
 
 
 
-
-
-      <!-- bor é a div mãe do formulario e do titulo cadastre-se -->   
-    <div class="bor">
-
-        <h2><b>CADASTRE-SE</b></h2>
-        
-        
-      <!-- Formulario  -->   
-        <form action="#">
-            <label for="nome">Nome:</label>
-            <div class="campo">
-                <input type="nome" id="nome" name="nome"  placeholder="Digite seu nome">
-        </div>
-
-        <label for="nome">Email:</label>
-        <div class="campo">
-            <input type="email" placeholder="Digite seu Email"> 
+      <div class="col-sm">
+        <div class="login-container text-center">
+          <h2 class="mb-4 text-success">Cadastro - IFJC</h2>
+          <form>
+  
+            <div class="form-group">
+              <label for="exampleInputNome1" style="position: relative; right: 145px;">Nome</label>
+              <input type="nome" class="form-control" id="exampleInputNomel1" aria-describedby="nomelHelp" placeholder="Digite seu Nome">
             </div>
-
-            <label for="nome">Senha:</label>
-            <div class="campo">
-                <input type="senha" placeholder="Crie sua senha"> 
-                </div>
-         
-               
-              
-      <!-- div bot mãe do buttom redgistrar-se  -->   
-            <div class="bot">
-                
-                <button type="button" onclick="registrar()">Registrar-me</button>
-
+            <div class="form-group">
+              <label for="exampleInputEmail1" style="position: relative; right: 147px; margin-top: 20px;">Email</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Digite seu Email">
             </div>
-                
-            </form>
-
-        </div>
-
-
-
-        
-      <!-- Codigo javascrip, usado para fazer as funções de: não aceitar numeros no forms, obriga o usuario a digitar seu nome e obriga a ele digitar um nome que tenha um numero maisor que 2 letras. OBS: Foi usado apenas nome, pois não tem como ainda armazenar email e senha em um banco, assim salvando essas informações   -->   
-            <script>
-                
-      // Função que registra e envia os dados de nome do usuario, para a pagina de recepção
-                function registrar() {
-                  const nome = document.getElementById("nome").value;
-                  const url = "Recepção.html?nome=" + nome;
-                  window.location.href = url;
-                }
-
-    //Funçaõ que faz toda a validação do nome do forms
-                function registrar() {
-          const nome = document.getElementById("nome").value.trim();
-    
-          //if que faz com que o usuario seja obrigado a digitar seu nome no campo nome do forms
-          if (nome == "") {
-            alert("Por favor, preencha obrigatoriamente o campo nome.");
-            return; // Interrompe o fluxo se o nome não foi preenchido
-          } 
-    
-          //Codinção que não permite que o usuario não digite numeros em seu nome OBS: /\d/ é uma ferramenta que serve para verificar se existe algum número (0 a 9) dentro de um texto.
-          if (/\d/.test(nome)) {
-          alert("O campo nome não pode conter números. Por favor, insira um nome válido.");
-          return; // Interrompe o fluxo se houver números no nome
-        }
-    
-        //Verifica se a quantidade de letras digitadas é maior que 2, assim não permitindo que digite uma quantidade menor que 2 letras
-        if (nome.length <= 2) {
-          alert("O nome deve ter mais de 2 letras. Por favor, insira um nome válido.");
-          return; // Interrompe o fluxo se o nome tiver 2 ou menos letras
-        }
-        
-
-//Adiciona o nome à URL e redireciona o usuário para outra página.
-          const url = "Recepção.html?nome=" + encodeURIComponent(nome);
-          window.location.href = url;}
-    
-    
-    
-    
-    
-    
-    
-              </script>
-          
-
-     
-
-
-
-      
-
-
+            <div class="form-group">
+              <label for="exampleInputPassword1" style="position: relative; right: 145px; margin-top: 20px;">Senha</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
+            </div>
+            <button type="submit" class="btn btn-success" style=" margin-top: 20px;"><a href="Recepção.html" style="text-decoration: none; color: white;">Enviar</a></button>
+          </form>
+          <p class="mt-3">Já tem uma conta? <a href="Login.html" class="text-success" style="text-decoration: none;">Faça login</a></p>
+      </div>
+      </div>
     </div>
+  </div>
 
-</div>
+
+
+
+
+
+
+
+
+
+
+
 
 
 
